@@ -1,0 +1,39 @@
+# Avoid accidental upload of the Sketch and Figma design files
+#####################################################
+## Please do not remove lines 5 and 6 - thanks! 🙂 ##
+#####################################################
+*.sketch
+*.fig
+
+# Avoid accidental XD upload if you convert the design file
+###############################################
+## Please do not remove line 12 - thanks! 🙂 ##
+###############################################
+*.xd
+
+# Avoid your project being littered with annoying .DS_Store files!
+.DS_Store
+.prettierignore
+starter-code/.gitignore
+starter-code/index.html
+starter-code/assets/fonts/Inter-VariableFont_slnt,wght.ttf
+starter-code/assets/fonts/OFL.txt
+starter-code/assets/fonts/README.txt
+starter-code/assets/fonts/static/Inter-Regular.ttf
+starter-code/assets/fonts/static/Inter-SemiBold.ttf
+starter-code/assets/images/favicon-32x32.png
+starter-code/assets/images/icon-age.svg
+starter-code/assets/images/icon-eating.svg
+starter-code/assets/images/icon-exercise.svg
+starter-code/assets/images/icon-gender.svg
+starter-code/assets/images/icon-muscle.svg
+starter-code/assets/images/icon-pregnancy.svg
+starter-code/assets/images/icon-race.svg
+starter-code/assets/images/icon-sleep.svg
+starter-code/assets/images/image-man-eating.webp
+starter-code/assets/images/logo.svg
+starter-code/assets/images/pattern-curved-line-left.svg
+starter-code/assets/images/pattern-curved-line-right.svg
+README-template.md
+README.md
+.vscode/settings.json
