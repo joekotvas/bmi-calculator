@@ -89,27 +89,27 @@
     this.render = function() {
         this.clearTimeout(this.renderDelayTimeout)
         this.renderDelayTimeout = setTimeout(function() {
-        const bmi = this.getBMI()
-        console.log(bmi)
-        if (bmi === 0) {
-            this.UI.outputContainer.classList.add('hidden')
-            this.UI.welcomeMessage.classList.remove('hidden')
+            const bmi = this.getBMI()
+            console.log(bmi)
+            if (bmi === 0) {
+                this.UI.outputContainer.classList.add('hidden')
+                this.UI.welcomeMessage.classList.remove('hidden')
 
-            this.UI.bmiOutput.innerHTML = 'N/A'
-            this.UI.classificationOutput.innerHTML = 'N/A'
-            this.UI.idealWeightOutput.innerHTML = 'N/A'
-            return
-        }
+                this.UI.bmiOutput.innerHTML = 'N/A'
+                this.UI.classificationOutput.innerHTML = 'N/A'
+                this.UI.idealWeightOutput.innerHTML = 'N/A'
+                return
+            }
 
-        this.UI.outputContainer.classList.remove('hidden')
-        this.UI.welcomeMessage.classList.add('hidden')
+            this.UI.outputContainer.classList.remove('hidden')
+            this.UI.welcomeMessage.classList.add('hidden')
 
-        const weightClassification = this.getWeightClassification()
-        const healthyWeightRange = this.getHealthyWeightRange()
-        this.UI.bmiOutput.innerHTML = bmi.toFixed(1)
-        this.UI.classificationOutput.innerHTML = weightClassification
-        this.UI.idealWeightOutput.innerHTML = `${healthyWeightRange.min} - ${healthyWeightRange.max}`
-    }.bind(this), 500)
+            const weightClassification = this.getWeightClassification()
+            const healthyWeightRange = this.getHealthyWeightRange()
+            this.UI.bmiOutput.innerHTML = bmi.toFixed(1)
+            this.UI.classificationOutput.innerHTML = weightClassification
+            this.UI.idealWeightOutput.innerHTML = `${healthyWeightRange.min} - ${healthyWeightRange.max}`
+        }, 500)
     }
 
     // Initialize
