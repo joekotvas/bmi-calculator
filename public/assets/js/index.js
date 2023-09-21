@@ -1,3 +1,12 @@
+/*
+
+To make this code more robust:
+
+1. Move natural language to a separate file
+
+
+*/
+
 (function () {
     this.renderDelayTimeout = null 
 
@@ -29,7 +38,15 @@
 
     this.changeUnits = function() {
         user.units = UI.unitsSelect.value
-        clearTimeout(this.renderDelayTimeout)
+        this.UI.heightInput.placeholder = user.units === 'metric' ? 'cm' : 'in'
+        this.UI.weightInput.placeholder = user.units === 'metric' ? 'kg' : 'lbs'
+
+        this.UI.heightInput.classList.toggle('metric', user.units === 'metric')
+        this.UI.weightInput.classList.toggle('metric', user.units === 'metric')
+        
+        this.UI.heightInput.classList.toggle('imperial', user.units === 'imperial')
+        this.UI.heightInput.classList.toggle('imperial', user.units === 'imperial')
+
         this.render()
     }
     this.updateHeight = function() {
