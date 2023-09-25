@@ -73,6 +73,8 @@ h2 {
   text-align: center;
 }
 
+/* Hero Intro */
+
 .hero-intro-section {
   background: linear-gradient(290deg, #d6e6fe 0%, #d6fcfe00 100%);
   border-radius: 0rem 0rem 2.1875rem 2.1875rem;
@@ -94,7 +96,7 @@ h2 {
   padding: 0 1.5rem;
 }
 
-/*** Form Section */
+/*** BMI Calculator */
 
 .hero-bmi-calculator-section {
   background: white;
@@ -129,6 +131,12 @@ h2 {
   text-align: left;
 }
 
-.hero-bmi-calculator-height-input {
+.hero-bmi-calculator-input {
+  border: 1px solid #D8E2E7;
+  border-radius: 0.75rem;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
   padding: 1.25rem 1.5rem;
+  width: 100%;
 }
