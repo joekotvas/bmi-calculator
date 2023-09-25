@@ -1,25 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --heading-xl-size: 4rem;
+  --body-font-size: 1rem;
+  --body-line-height: 1.5;
+  --body-sm-font-size: 0.875rem;
+  --bold-font-weight: 600;
+  --color-blue: #345ff6;
+  --color-borders: #d8e2e7;
+  --color-dark-electric-blue: #5e6e85;
+  --color-gunmetal: #253347;
+  --color-pure-white: #ffffff;
+  --font-family: 'Inter', sans-serif;
   --heading-lg-size: 3rem;
+  --heading-line-height: 1.1;
   --heading-md-size: 1.5rem;
   --heading-sm-size: 1.25rem;
-  --body-font-size: 1rem;
-  --body-sm-font-size: 0.875rem;
-
-  --bold-font-weight: 600;
-
-  --heading-line-height: 1.1;
-  --body-line-height: 1.5;
-
-  --color-blue: #345ff6;
-  --color-gunmetal: #253347;
-  --color-dark-electric-blue: #5e6e85;
-  --color-borders: #d8e2e7;
-  --color-pure-white: #ffffff;
-
-  --font-family: 'Inter', sans-serif;
+  --heading-xl-size: 4rem;
 }
 
 *,
@@ -32,19 +28,26 @@
   display: none;
 }
 
+html {
+  padding: 0;
+}
+
 body {
-  font-family: var(--font-family);
   color: var(--color-dark-electric-blue);
+  font-family: var(--font-family);
   font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
 h2,
 h3,
 h4 {
+  color: var(--color-gunmetal);
   font-weight: var(--bold-font-weight);
   line-height: var(--heading-line-height);
-  color: var(--color-gunmetal);
 }
 
 b,
@@ -68,28 +71,64 @@ h2 {
 
 .hero-section {
   text-align: center;
-  padding: 0 1rem;
-  background: linear-gradient(290.1deg, #d6e6fe 0%, #d6fcfe 100%);
+}
+
+.hero-intro-section {
+  background: linear-gradient(290deg, #d6e6fe 0%, #d6fcfe00 100%);
+  border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+  padding: 0 1rem 12rem;
 }
 
 .logo {
-  width: 2.5rem;
   margin-top: 2rem;
+  width: 2.5rem;
 }
 
 .hero-title {
+  font-size: 3rem;
+  letter-spacing: -0.15rem;
   margin: 1.25rem auto;
+}
+
+.hero-description {
+  padding: 0 1.5rem;
 }
 
 /*** Form Section */
 
 .hero-bmi-calculator-section {
   background: white;
+  border-radius: 1rem;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  margin: -10rem 1.5rem 0;
+  padding: 1rem 1rem 3rem;
 }
 
 .hero-bmi-calculator-title {
   font-size: var(--heading-md-size);
+  letter-spacing: -0.075rem;
 }
 
-.hero-bmi-calculator-units-selector {
+.hero-bmi-calculator-units-label {
+  display: none;
+}
+
+.hero-bmi-calculator-units-radio-container {
+  display: block;
+}
+
+.hero-bmi-calculator-units-radio-label {
+  font-weight: 600;
+}
+
+.hero-bmi-calculator-input-label {
+  color: #5e6e85;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.hero-bmi-calculator-height-input {
+  padding: 1.25rem 1.5rem;
 }

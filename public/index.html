@@ -18,16 +18,18 @@
   </head>
   <body>
     <section class="hero-section">
-      <img class="logo" src="assets/images/logo.svg" alt="Logo Image" />
-      <h1 class="hero-title">Body Mass Index Calculator</h1>
+      <div class="hero-intro-section">
+        <img class="logo" src="assets/images/logo.svg" alt="Logo Image" />
+        <h1 class="hero-title">Body Mass Index Calculator</h1>
 
-      <div class="hero-description">
-        <p>
-          Better understand your weight in relation to your height using our
-          body mass index (BMI) calculator. While BMI is not the sole
-          determinant of a healthy weight, it offers a valuable starting point
-          to evaluate your overall health and well-being.
-        </p>
+        <div class="hero-description">
+          <p>
+            Better understand your weight in relation to your height using our
+            body mass index (BMI) calculator. While BMI is not the sole
+            determinant of a healthy weight, it offers a valuable starting point
+            to evaluate your overall health and well-being.
+          </p>
+        </div>
       </div>
       <div class="hero-bmi-calculator-section">
         <form class="hero-bmi-calculator-form">
@@ -37,17 +39,35 @@
             >Units</label
           >
 
-          <select
-            name="units"
-            title="Units"
-            id="hero-bmi-calculator-units-select"
-            class="hero-bmi-calculator-units-select"
-          >
-            <option value="metric">Metric</option>
-            <option value="imperial">Imperial</option>
-          </select>
+          <!-- radio button unit selector -->
+          <div class="hero-bmi-calculator-units-radio-container">
+            <input
+              type="radio"
+              id="hero-bmi-calculator-units-radio-metric"
+              name="hero-bmi-calculator-units"
+              value="metric"
+              checked
+            />
+            <label
+              for="hero-bmi-calculator-units-radio-metric"
+              class="hero-bmi-calculator-units-radio-label"
+              >Metric</label
+            >
 
-          <label for="height" class="hero-bmi-calculator-height-label"
+            <input
+              type="radio"
+              id="hero-bmi-calculator-units-radio-imperial"
+              name="hero-bmi-calculator-units"
+              value="imperial"
+            />
+            <label
+              for="hero-bmi-calculator-units-radio-imperial"
+              class="hero-bmi-calculator-units-radio-label"
+              >Imperial</label
+            >
+          </div>
+
+          <label for="height" class="hero-bmi-calculator-input-label"
             >Height</label
           >
           <input
@@ -58,7 +78,7 @@
             required
           />
 
-          <label for="weight" class="hero-bmi-calculator-weight-label"
+          <label for="weight" class="hero-bmi-calculator-input-label"
             >Weight</label
           >
           <input
