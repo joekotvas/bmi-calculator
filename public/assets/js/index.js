@@ -160,7 +160,7 @@
   }
 
   this.getMetricWeight = function (lb) {
-    return Math.round((lb * 100) / 2.205) / 100
+    return Math.round((lb * 10) / 2.205) / 10
   }
 
   this.getBMI = function () {
