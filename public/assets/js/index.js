@@ -1,12 +1,3 @@
-/*
-
-To make this code more robust:
-
-1. Move natural language to a separate file
-
-
-*/
-
 ;(function () {
   this.renderDelayTimeout = null
 
@@ -31,11 +22,15 @@ To make this code more robust:
 
     // Height and weight inputs
     input: {
-      ft: document.querySelector('#hero-bmi-calculator-height-input--ft'),
-      in: document.querySelector('#hero-bmi-calculator-height-input--in'),
-      cm: document.querySelector('#hero-bmi-calculator-height-input--cm'),
-      kg: document.querySelector('#hero-bmi-calculator-weight-input--kg'),
-      lb: document.querySelector('#hero-bmi-calculator-weight-input--lb'),
+      height: {
+        cm: document.querySelector('#hero-bmi-calculator-height-input--cm'),
+        ft: document.querySelector('#hero-bmi-calculator-height-input--ft'),
+        in: document.querySelector('#hero-bmi-calculator-height-input--in'),
+      },
+      weight: {
+        kg: document.querySelector('#hero-bmi-calculator-weight-input--kg'),
+        lb: document.querySelector('#hero-bmi-calculator-weight-input--lb'),
+      },
     },
 
     welcomeMessage: document.querySelector(
@@ -65,8 +60,19 @@ To make this code more robust:
     this.UI.unitsSelectors.forEach(radio => {
       radio.addEventListener('change', this.changeUnits.bind(this))
     })
-    this.UI.heightInput.addEventListener('input', this.updateHeight.bind(this))
-    this.UI.weightInput.addEventListener('input', this.updateWeight.bind(this))
+    Object.keys(this.UI.input.height).forEach(key => {
+      this.UI.input.height[key].addEventListener(
+        'input',
+        this.updateHeight.bind(this)
+      )
+    })
+    Object.keys(this.UI.input.weight).forEach(key => {
+      console.log('key', this.UI.input.weight)
+      this.UI.input.weight[key].addEventListener(
+        'input',
+        this.updateWeight.bind(this)
+      )
+    })
   }
 
   this.changeUnits = function (e) {
@@ -83,18 +89,80 @@ To make this code more robust:
       wrapper.classList.remove('hidden')
     })
 
+    // Update the input values for the selected unit
+    if (user.units === 'metric') {
+      this.UI.input.height.cm.value = this.getMetricHeight(
+        this.UI.input.height.ft.value,
+        this.UI.input.height.in.value
+      )
+      this.UI.input.weight.kg.value = this.getMetricWeight(
+        this.UI.input.weight.lb.value
+      )
+    } else {
+      const imperialHeightObj = this.getImperialHeightObj(
+        this.UI.input.height.cm.value
+      )
+      this.UI.input.height.ft.value = imperialHeightObj.ft
+      this.UI.input.height.in.value = imperialHeightObj.in
+      this.UI.input.weight.lb.value = this.getImperialWeight(
+        this.UI.input.weight.kg.value
+      )
+    }
+
     this.render()
   }
+
   this.updateHeight = function () {
-    user.height = UI.heightInput.value
+    if (user.units === 'imperial') {
+      user.height = this.getMetricHeight(
+        this.UI.input.height.ft.value,
+        this.UI.input.height.in.value
+      )
+    } else {
+      user.height = this.UI.input.height.cm.value
+    }
     this.render()
   }
+
   this.updateWeight = function () {
-    user.weight = UI.weightInput.value
+    if (user.units === 'imperial') {
+      user.weight = this.getMetricWeight(this.UI.input.weight.lb.value)
+    } else {
+      user.weight = this.UI.input.weight.kg.value
+    }
     this.render()
   }
 
   // Methods
+  this.getImperialHeightObj = function (cm) {
+    const inches = cm / 2.54
+    const feet = Math.floor(inches / 12)
+    const remainingInches = Math.round((inches % 12) * 10) / 10
+    return {
+      ft: feet,
+      in: remainingInches,
+    }
+  }
+
+  this.getImperialHeightInches = function (cm) {
+    const inches = Math.round((cm * 10) / 2.54) / 10
+    return inches
+  }
+
+  this.getImperialWeight = function (kg) {
+    const lb = Math.round(kg * 10 * 2.205) / 10
+    return lb
+  }
+
+  this.getMetricHeight = function (ft, inches) {
+    const totalInches = +ft * 12 + +inches
+    return Math.round(totalInches * 10 * 2.54) / 10
+  }
+
+  this.getMetricWeight = function (lb) {
+    return Math.round((lb * 100) / 2.205) / 100
+  }
+
   this.getBMI = function () {
     if (user.height === 0 || user.weight === 0) {
       return 0
@@ -102,7 +170,9 @@ To make this code more robust:
     if (user.units === 'metric') {
       return user.weight / (((user.height / 100) * user.height) / 100)
     } else {
-      return (user.weight * 703) / (user.height * user.height)
+      const inches = this.getImperialHeightInches(user.height)
+      const lbs = this.getImperialWeight(user.weight)
+      return (lbs * 703) / inches ** 2
     }
   }
 
@@ -115,9 +185,10 @@ To make this code more robust:
           25 * (((user.height / 100) * user.height) / 100).toFixed(1) + 'kgs',
       }
     } else {
+      const inches = this.getImperialHeightInches(user.height)
       return {
-        min: 18.5 * ((user.height * user.height) / 703).toFixed(1) + 'lbs',
-        max: 25 * ((user.height * user.height) / 703).toFixed(1) + 'lbs',
+        min: 18.5 * (inches ** 2 / 703).toFixed(1) + 'lbs',
+        max: 25 * (inches ** 2 / 703).toFixed(1) + 'lbs',
       }
     }
   }
