@@ -103,7 +103,7 @@ h2 {
   border-radius: 1rem;
   box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
   margin: -10rem 1.5rem 0;
-  padding: 1rem 1rem 3rem;
+  padding: 1rem 1.5rem 3rem;
 }
 
 .hero-bmi-calculator-title {
@@ -116,11 +116,42 @@ h2 {
 }
 
 .hero-bmi-calculator-units-radio-container {
-  display: block;
+  display: flex;
+  gap: 1rem;
 }
 
 .hero-bmi-calculator-units-radio-label {
+  cursor: pointer;
   font-weight: 600;
+  text-align: left;
+  width: 50%;
+}
+
+input[type='radio'] {
+  appearance: none;
+  border: 1px solid #d8e2e7;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.9375rem;
+  margin: 0 0.75rem 0 0;
+  position: relative;
+  top: 0.6rem;
+  width: 1.9375rem;
+}
+
+input[type='radio']:checked {
+  background-color: var(--color-blue);
+  border: 8px solid #e2e7fc;
+}
+
+.imperial-height-input-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.imperial-height-input-wrapper.hidden {
+  display: none;
 }
 
 .hero-bmi-calculator-input-label {
@@ -128,15 +159,66 @@ h2 {
   display: block;
   font-size: 0.875rem;
   font-weight: 400;
+  padding: 1rem 0 0.5rem;
   text-align: left;
 }
 
 .hero-bmi-calculator-input {
-  border: 1px solid #D8E2E7;
+  border: 1px solid #d8e2e7;
   border-radius: 0.75rem;
   display: block;
   font-size: 1.5rem;
   font-weight: 600;
   padding: 1.25rem 1.5rem;
   width: 100%;
+}
+
+.hero-bmi-calculator-input::placeholder {
+  color: white;
+}
+
+.hero-bmi-calculator-input:focus {
+  border-color: var(--color-blue);
+  outline: none;
+}
+
+/* Hide the number incrementor */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bmi-calculator-input-wrapper {
+  position: relative;
+}
+
+.bmi-calculator-input-wrapper:after {
+  content: '';
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  color: var(--Blue, #345ff6);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.bmi-calculator-height-wrapper--cm:after {
+  content: 'cm';
+}
+
+.bmi-calculator-height-wrapper--ft:after {
+  content: 'ft';
+}
+
+.bmi-calculator-height-wrapper--in:after {
+  content: 'in';
+}
+
+.bmi-calculator-weight-wrapper--kg:after {
+  content: 'kg';
+}
+
+.bmi-calculator-weight-wrapper--lb:after {
+  content: 'lb';
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/index.js" defer></script>
 
-    <title>Frontend Mentor | Body Mass Index Calculator</title>
+    <title>Body Mass Index Calculator</title>
   </head>
   <body>
     <section class="hero-section">
@@ -41,55 +41,110 @@
 
           <!-- radio button unit selector -->
           <div class="hero-bmi-calculator-units-radio-container">
-            <input
-              type="radio"
-              id="hero-bmi-calculator-units-radio-metric"
-              name="hero-bmi-calculator-units"
-              value="metric"
-              checked
-            />
             <label
               for="hero-bmi-calculator-units-radio-metric"
               class="hero-bmi-calculator-units-radio-label"
-              >Metric</label
             >
-
-            <input
-              type="radio"
-              id="hero-bmi-calculator-units-radio-imperial"
-              name="hero-bmi-calculator-units"
-              value="imperial"
-            />
+              <input
+                type="radio"
+                id="hero-bmi-calculator-units-radio-metric"
+                name="hero-bmi-calculator-units"
+                value="metric"
+                checked
+              />
+              Metric
+            </label>
             <label
               for="hero-bmi-calculator-units-radio-imperial"
               class="hero-bmi-calculator-units-radio-label"
-              >Imperial</label
             >
+              <input
+                type="radio"
+                id="hero-bmi-calculator-units-radio-imperial"
+                name="hero-bmi-calculator-units"
+                value="imperial"
+              />
+              Imperial
+            </label>
           </div>
 
           <label for="height" class="hero-bmi-calculator-input-label"
             >Height</label
           >
-          <input
-            type="number"
-            id="hero-bmi-calculator-height-input"
-            class="hero-bmi-calculator-input"
-            name="height"
-            placeholder="cm"
-            required
-          />
+
+          <div id="metric-height-input-wrapper">
+            <span
+              class="bmi-calculator-height-wrapper--cm bmi-calculator-input-wrapper"
+            >
+              <input
+                type="number"
+                id="hero-bmi-calculator-height-input--cm"
+                class="hero-bmi-calculator-input"
+                name="height"
+                placeholder="cm"
+              />
+            </span>
+          </div>
+
+          <div
+            id="imperial-height-input-wrapper"
+            class="imperial-height-input-wrapper hidden"
+          >
+            <span
+              class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
+            >
+              <input
+                type="number"
+                id="hero-bmi-calculator-height-input--ft"
+                class="hero-bmi-calculator-input"
+                name="height-feet"
+                placeholder="ft"
+              />
+            </span>
+            <span
+              class="bmi-calculator-height-wrapper--in bmi-calculator-input-wrapper"
+            >
+              <input
+                type="number"
+                id="hero-bmi-calculator-height-input--in"
+                class="hero-bmi-calculator-input"
+                name="height-inches"
+                placeholder="in"
+              />
+            </span>
+          </div>
 
           <label for="weight" class="hero-bmi-calculator-input-label"
             >Weight</label
           >
-          <input
-            type="number"
-            id="hero-bmi-calculator-weight-input"
-            class="hero-bmi-calculator-input"
-            name="weight"
-            placeholder="kg"
-            required
-          />
+
+          <div id="metric-weight-input-wrapper">
+            <span
+              class="bmi-calculator-weight-wrapper--kg bmi-calculator-input-wrapper"
+            >
+              <input
+                type="number"
+                id="hero-bmi-calculator-weight-input"
+                class="hero-bmi-calculator-input"
+                name="weight-kilos"
+                placeholder="kg"
+              />
+            </span>
+          </div>
+
+          <div id="imperial-weight-input-wrapper" class="hidden">
+            <span
+              class="bmi-calculator-weight-wrapper--lb bmi-calculator-input-wrapper"
+            >
+              <input
+                type="number"
+                id="hero-bmi-calculator-weight-input-pounds"
+                class="hero-bmi-calculator-input"
+                name="weight-pounds"
+                placeholder="lbs"
+              />
+            </span>
+          </div>
 
           <section
             class="hero-bmi-calculator-welcome-message"

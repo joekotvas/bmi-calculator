@@ -12,11 +12,32 @@ To make this code more robust:
 
   // UI Elements
   this.UI = {
+    // Units selector radio buttons
     unitsSelectors: document.querySelectorAll(
       'input[name="hero-bmi-calculator-units"]'
     ),
-    heightInput: document.querySelector('#hero-bmi-calculator-height-input'),
-    weightInput: document.querySelector('#hero-bmi-calculator-weight-input'),
+
+    // Imperial and metric input wrappers
+    inputWrapper: {
+      metric: [
+        document.querySelector('#metric-height-input-wrapper'),
+        document.querySelector('#metric-weight-input-wrapper'),
+      ],
+      imperial: [
+        document.querySelector('#imperial-height-input-wrapper'),
+        document.querySelector('#imperial-weight-input-wrapper'),
+      ],
+    },
+
+    // Height and weight inputs
+    input: {
+      ft: document.querySelector('#hero-bmi-calculator-height-input--ft'),
+      in: document.querySelector('#hero-bmi-calculator-height-input--in'),
+      cm: document.querySelector('#hero-bmi-calculator-height-input--cm'),
+      kg: document.querySelector('#hero-bmi-calculator-weight-input--kg'),
+      lb: document.querySelector('#hero-bmi-calculator-weight-input--lb'),
+    },
+
     welcomeMessage: document.querySelector(
       '#hero-bmi-calculator-welcome-message'
     ),
@@ -41,7 +62,7 @@ To make this code more robust:
 
   // Event handlers
   this.setup = function () {
-    this.UI.unitsSelectors.forEach((radio) => {
+    this.UI.unitsSelectors.forEach(radio => {
       radio.addEventListener('change', this.changeUnits.bind(this))
     })
     this.UI.heightInput.addEventListener('input', this.updateHeight.bind(this))
@@ -50,14 +71,17 @@ To make this code more robust:
 
   this.changeUnits = function (e) {
     user.units = e.target.value
-    this.UI.heightInput.placeholder = user.units === 'metric' ? 'cm' : 'in'
-    this.UI.weightInput.placeholder = user.units === 'metric' ? 'kg' : 'lbs'
+    const unselectedUnit = user.units === 'metric' ? 'imperial' : 'metric'
 
-    this.UI.heightInput.classList.toggle('metric', user.units === 'metric')
-    this.UI.weightInput.classList.toggle('metric', user.units === 'metric')
+    // Hide the input wrappers for the unselected unit
+    this.UI.inputWrapper[unselectedUnit].forEach(wrapper => {
+      wrapper.classList.add('hidden')
+    })
 
-    this.UI.heightInput.classList.toggle('imperial', user.units === 'imperial')
-    this.UI.heightInput.classList.toggle('imperial', user.units === 'imperial')
+    // Show the input wrappers for the selected unit
+    this.UI.inputWrapper[user.units].forEach(wrapper => {
+      wrapper.classList.remove('hidden')
+    })
 
     this.render()
   }
