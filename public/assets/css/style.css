@@ -194,13 +194,13 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .bmi-calculator-input-wrapper:after {
+  color: var(--Blue, #345ff6);
   content: '';
+  font-size: 1.5rem;
+  font-weight: 600;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: var(--Blue, #345ff6);
-  font-weight: 600;
-  font-size: 1.5rem;
 }
 
 .bmi-calculator-height-wrapper--cm:after {
@@ -221,4 +221,53 @@ input[type='number']::-webkit-outer-spin-button {
 
 .bmi-calculator-weight-wrapper--lb:after {
   content: 'lb';
+}
+
+.hero-bmi-calculator-results-container {
+  border-radius: 16px;
+  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+  color: var(--color-pure-white);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.hero-bmi-calculator-results-container {
+  text-align: left;
+}
+
+.hero-bmi-calculator-results-title {
+  color: var(--color-pure-white);
+  font-size: 1rem;
+}
+
+.hero-bmi-calculator-results-number {
+  font-size: 3rem;
+}
+
+#hero-bmi-calculator-results-ideal-weight {
+  font-weight: 700;
+}
+
+/* Explanation Section */
+
+.explanation-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.explanation-title {
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+}
+
+.tips-section {
+  padding: 1.5rem;
+}
+
+.tips-card {
+  padding-bottom: 1rem;
+}
+
+.tips-card-title {
+  font-size: var(--heading-md-size);
 }
