@@ -121,11 +121,11 @@ h2 {
 }
 
 .hero-bmi-calculator-units-radio-label {
+  color: var(--color-gunmetal);
   cursor: pointer;
   font-weight: 600;
   text-align: left;
   width: 50%;
-  color: var(--color-gunmetal);
 }
 
 input[type='radio'] {
@@ -225,11 +225,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .hero-bmi-calculator-results-container {
-  border-radius: 16px;
   background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+  border-radius: 16px;
   color: var(--color-pure-white);
-  padding: 2rem;
   margin-top: 1.5rem;
+  padding: 2rem;
 }
 
 .hero-bmi-calculator-results-container {
@@ -244,8 +244,8 @@ input[type='number']::-webkit-outer-spin-button {
 .hero-bmi-calculator-results-number {
   font-size: 3rem;
   font-weight: 600;
-  line-height: 110%;
   letter-spacing: -0.15rem;
+  line-height: 110%;
 }
 
 .hero-bmi-calculator-results-description {
