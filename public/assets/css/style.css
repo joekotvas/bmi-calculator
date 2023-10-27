@@ -260,11 +260,17 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Explanation Section */
 
-.explanation-section {
-  margin-top: 3rem;
-  padding: 1.5rem;
+.explanation-image {
+  width: 100%;
 }
 
+.explanation-section {
+  margin-top: 3rem;
+}
+
+.explanation-description-container {
+  padding: 1.5rem;
+}
 .explanation-title {
   font-size: 2rem;
   letter-spacing: -0.1rem;
