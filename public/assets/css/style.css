@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
   --body-font-size: 1rem;
@@ -10,7 +10,7 @@
   --color-dark-electric-blue: #5e6e85;
   --color-gunmetal: #253347;
   --color-pure-white: #ffffff;
-  --font-family: "Inter", sans-serif;
+  --font-family: 'Inter', sans-serif;
   --heading-lg-size: 3rem;
   --heading-line-height: 1.1;
   --heading-md-size: 1.5rem;
@@ -132,7 +132,7 @@ h2 {
   width: 50%;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   appearance: none;
   border: 1px solid #d8e2e7;
   border-radius: 50%;
@@ -145,7 +145,7 @@ input[type="radio"] {
   width: 1.9375rem;
 }
 
-input[type="radio"]:checked {
+input[type='radio']:checked {
   background-color: var(--color-blue);
   border: 8px solid #e2e7fc;
 }
@@ -188,8 +188,8 @@ input[type="radio"]:checked {
 }
 
 /* Hide the number incrementor */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -200,7 +200,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .bmi-calculator-input-wrapper:after {
   color: var(--Blue, #345ff6);
-  content: "";
+  content: '';
   font-size: 1.5rem;
   font-weight: 600;
   position: absolute;
@@ -209,23 +209,23 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .bmi-calculator-height-wrapper--cm:after {
-  content: "cm";
+  content: 'cm';
 }
 
 .bmi-calculator-height-wrapper--ft:after {
-  content: "ft";
+  content: 'ft';
 }
 
 .bmi-calculator-height-wrapper--in:after {
-  content: "in";
+  content: 'in';
 }
 
 .bmi-calculator-weight-wrapper--kg:after {
-  content: "kg";
+  content: 'kg';
 }
 
 .bmi-calculator-weight-wrapper--lb:after {
-  content: "lb";
+  content: 'lb';
 }
 
 .hero-bmi-calculator-results-container {
@@ -269,6 +269,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .explanation-section {
+  background: var(
+    --Gradient-1,
+    linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%)
+  );
   margin-top: 3rem;
 }
 
