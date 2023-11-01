@@ -187,8 +187,8 @@
     } else {
       const inches = this.getImperialHeightInches(user.height)
       return {
-        min: 18.5 * (inches ** 2 / 703).toFixed(1) + 'lbs',
-        max: 25 * (inches ** 2 / 703).toFixed(1) + 'lbs',
+        min: (18.5 * (inches ** 2 / 703)).toFixed(1) + 'lbs',
+        max: (25 * (inches ** 2 / 703)).toFixed(1) + 'lbs',
       }
     }
   }
