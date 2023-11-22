@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -73,10 +73,12 @@
           </div>
 
           <div class="calculator-numeric-inputs">
-            <label for="height" class="hero-bmi-calculator-input-label">
-              Height
-
-              <div id="metric-height-input-wrapper">
+            <div id="metric-height-input-wrapper">
+              <label
+                for="height-centimeters"
+                class="metric-input-label hero-bmi-calculator-input-label"
+              >
+                Height
                 <span
                   class="bmi-calculator-height-wrapper--cm bmi-calculator-input-wrapper"
                 >
@@ -84,16 +86,22 @@
                     type="number"
                     id="hero-bmi-calculator-height-input--cm"
                     class="hero-bmi-calculator-input"
-                    name="height"
+                    name="height-centimeter"
                     placeholder="cm"
                   />
                 </span>
-              </div>
+              </label>
+            </div>
 
-              <div
-                id="imperial-height-input-wrapper"
-                class="imperial-height-input-wrapper hidden"
+            <div
+              id="imperial-height-input-wrapper"
+              class="imperial-height-input-wrapper hidden"
+            >
+              <label
+                for="height-feet"
+                class="metric-input-label hero-bmi-calculator-input-label"
               >
+                <span>Height</span>
                 <span
                   class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
                 >
@@ -116,13 +124,14 @@
                     placeholder="in"
                   />
                 </span>
-              </div>
-            </label>
-
-            <label for="weight" class="hero-bmi-calculator-input-label"
-              >Weight
-
-              <div id="metric-weight-input-wrapper">
+              </label>
+            </div>
+            <div id="metric-weight-input-wrapper">
+              <label
+                for="weight-kilos"
+                class="metric-input-label hero-bmi-calculator-input-label"
+              >
+                <span>Weight</span>
                 <span
                   class="bmi-calculator-weight-wrapper--kg bmi-calculator-input-wrapper"
                 >
@@ -134,9 +143,12 @@
                     placeholder="kg"
                   />
                 </span>
-              </div>
+              </label>
+            </div>
 
-              <div id="imperial-weight-input-wrapper" class="hidden">
+            <div id="imperial-weight-input-wrapper" class="hidden">
+              <label for="weight-lbs" class="hero-bmi-calculator-input-label">
+                <span class="label-text">Weight</span>
                 <span
                   class="bmi-calculator-weight-wrapper--lb bmi-calculator-input-wrapper"
                 >
@@ -144,12 +156,12 @@
                     type="number"
                     id="hero-bmi-calculator-weight-input--lb"
                     class="hero-bmi-calculator-input"
-                    name="weight-pounds"
+                    name="weight-lbs"
                     placeholder="lbs"
                   />
                 </span>
-              </div>
-            </label>
+              </label>
+            </div>
           </div>
           <section
             class="hero-bmi-calculator-welcome-message"
@@ -198,7 +210,6 @@
 
       <div class="explanation-description-container">
         <h2 class="explanation-title">What your BMI result means</h2>
-
         <p class="explanation-description">
           A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
           Maintaining a healthy weight may lower your chances of experiencing
