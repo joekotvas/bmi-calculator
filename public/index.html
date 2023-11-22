@@ -73,7 +73,7 @@
           </div>
 
           <div class="calculator-numeric-inputs">
-            <div id="metric-height-input-wrapper">
+            <div id="metric-height-input-wrapper" class="metric-input-wrapper">
               <label
                 for="height-centimeters"
                 class="metric-input-label hero-bmi-calculator-input-label"
@@ -102,31 +102,33 @@
                 class="metric-input-label hero-bmi-calculator-input-label"
               >
                 <span>Height</span>
-                <span
-                  class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
-                >
-                  <input
-                    type="number"
-                    id="hero-bmi-calculator-height-input--ft"
-                    class="hero-bmi-calculator-input"
-                    name="height-feet"
-                    placeholder="ft"
-                  />
-                </span>
-                <span
-                  class="bmi-calculator-height-wrapper--in bmi-calculator-input-wrapper"
-                >
-                  <input
-                    type="number"
-                    id="hero-bmi-calculator-height-input--in"
-                    class="hero-bmi-calculator-input"
-                    name="height-inches"
-                    placeholder="in"
-                  />
-                </span>
+                <div class="imperial-height-inputs-container">
+                  <span
+                    class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
+                  >
+                    <input
+                      type="number"
+                      id="hero-bmi-calculator-height-input--ft"
+                      class="hero-bmi-calculator-input"
+                      name="height-feet"
+                      placeholder="ft"
+                    />
+                  </span>
+                  <span
+                    class="bmi-calculator-height-wrapper--in bmi-calculator-input-wrapper"
+                  >
+                    <input
+                      type="number"
+                      id="hero-bmi-calculator-height-input--in"
+                      class="hero-bmi-calculator-input"
+                      name="height-inches"
+                      placeholder="in"
+                    />
+                  </span>
+                </div>
               </label>
             </div>
-            <div id="metric-weight-input-wrapper">
+            <div id="metric-weight-input-wrapper" class="metric-input-wrapper">
               <label
                 for="weight-kilos"
                 class="metric-input-label hero-bmi-calculator-input-label"

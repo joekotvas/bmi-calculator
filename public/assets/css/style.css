@@ -151,8 +151,13 @@ input[type='radio']:checked {
 }
 
 .imperial-height-input-wrapper {
+  width: 100%;
+}
+
+.imperial-height-inputs-container {
   display: flex;
-  gap: 1rem;
+  gap: 4%;
+  justify-content: space-between;
 }
 
 .imperial-height-input-wrapper.hidden {
@@ -202,6 +207,7 @@ input[type='number']::-webkit-outer-spin-button {
 .bmi-calculator-input-wrapper {
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .bmi-calculator-input-wrapper:after {
@@ -232,15 +238,6 @@ input[type='number']::-webkit-outer-spin-button {
 
 .bmi-calculator-weight-wrapper--lb:after {
   content: 'lb';
-}
-
-.imperial-height-input-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.imperial-height-input-wrapper span {
-  width: 48%;
 }
 
 .hero-bmi-calculator-results-container {
@@ -382,15 +379,18 @@ input[type='number']::-webkit-outer-spin-button {
   .hero-bmi-calculator-title {
     text-align: left;
   }
-  .calculator-numeric-inputs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+
   #imperial-weight-input-wrapper {
     width: 100%;
   }
-  .metric-input-label {
+
+  .metric-input-wrapper {
     width: 48%;
+  }
+
+  .calculator-numeric-inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
