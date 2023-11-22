@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -73,10 +73,12 @@
           </div>
 
           <div class="calculator-numeric-inputs">
-            <label for="height" class="hero-bmi-calculator-input-label">
-              Height
-
-              <div id="metric-height-input-wrapper">
+            <div id="metric-height-input-wrapper" class="metric-input-wrapper">
+              <label
+                for="height-centimeters"
+                class="metric-input-label hero-bmi-calculator-input-label"
+              >
+                Height
                 <span
                   class="bmi-calculator-height-wrapper--cm bmi-calculator-input-wrapper"
                 >
@@ -84,45 +86,54 @@
                     type="number"
                     id="hero-bmi-calculator-height-input--cm"
                     class="hero-bmi-calculator-input"
-                    name="height"
+                    name="height-centimeter"
                     placeholder="cm"
                   />
                 </span>
-              </div>
+              </label>
+            </div>
 
-              <div
-                id="imperial-height-input-wrapper"
-                class="imperial-height-input-wrapper hidden"
+            <div
+              id="imperial-height-input-wrapper"
+              class="imperial-height-input-wrapper hidden"
+            >
+              <label
+                for="height-feet"
+                class="metric-input-label hero-bmi-calculator-input-label"
               >
-                <span
-                  class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
-                >
-                  <input
-                    type="number"
-                    id="hero-bmi-calculator-height-input--ft"
-                    class="hero-bmi-calculator-input"
-                    name="height-feet"
-                    placeholder="ft"
-                  />
-                </span>
-                <span
-                  class="bmi-calculator-height-wrapper--in bmi-calculator-input-wrapper"
-                >
-                  <input
-                    type="number"
-                    id="hero-bmi-calculator-height-input--in"
-                    class="hero-bmi-calculator-input"
-                    name="height-inches"
-                    placeholder="in"
-                  />
-                </span>
-              </div>
-            </label>
-
-            <label for="weight" class="hero-bmi-calculator-input-label"
-              >Weight
-
-              <div id="metric-weight-input-wrapper">
+                <span>Height</span>
+                <div class="imperial-height-inputs-container">
+                  <span
+                    class="bmi-calculator-height-wrapper--ft bmi-calculator-input-wrapper"
+                  >
+                    <input
+                      type="number"
+                      id="hero-bmi-calculator-height-input--ft"
+                      class="hero-bmi-calculator-input"
+                      name="height-feet"
+                      placeholder="ft"
+                    />
+                  </span>
+                  <span
+                    class="bmi-calculator-height-wrapper--in bmi-calculator-input-wrapper"
+                  >
+                    <input
+                      type="number"
+                      id="hero-bmi-calculator-height-input--in"
+                      class="hero-bmi-calculator-input"
+                      name="height-inches"
+                      placeholder="in"
+                    />
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div id="metric-weight-input-wrapper" class="metric-input-wrapper">
+              <label
+                for="weight-kilos"
+                class="metric-input-label hero-bmi-calculator-input-label"
+              >
+                <span>Weight</span>
                 <span
                   class="bmi-calculator-weight-wrapper--kg bmi-calculator-input-wrapper"
                 >
@@ -134,9 +145,12 @@
                     placeholder="kg"
                   />
                 </span>
-              </div>
+              </label>
+            </div>
 
-              <div id="imperial-weight-input-wrapper" class="hidden">
+            <div id="imperial-weight-input-wrapper" class="hidden">
+              <label for="weight-lbs" class="hero-bmi-calculator-input-label">
+                <span class="label-text">Weight</span>
                 <span
                   class="bmi-calculator-weight-wrapper--lb bmi-calculator-input-wrapper"
                 >
@@ -144,47 +158,51 @@
                     type="number"
                     id="hero-bmi-calculator-weight-input--lb"
                     class="hero-bmi-calculator-input"
-                    name="weight-pounds"
+                    name="weight-lbs"
                     placeholder="lbs"
                   />
                 </span>
-              </div>
-            </label>
-          </div>
-          <section
-            class="hero-bmi-calculator-welcome-message"
-            id="hero-bmi-calculator-welcome-message"
-          >
-            <h3>Welcome</h3>
-            <p>
-              Enter your height and weight and you’ll see your BMI result here
-            </p>
-          </section>
-
-          <section
-            id="hero-bmi-calculator-results-container"
-            class="hero-bmi-calculator-results-container hidden"
-          >
-            <h2 class="hero-bmi-calculator-results-title">Your BMI is...</h2>
-
-            <span
-              class="hero-bmi-calculator-results-number"
-              id="hero-bmi-calculator-results-number"
-              ><!-- add score --></span
-            >
-
-            <div class="hero-bmi-calculator-results-description">
-              <p>
-                Your BMI suggests you're
-                <span id="hero-bmi-calculator-results-classification"
-                  ><!-- add classification --></span
-                >. Your ideal weight is between
-                <span id="hero-bmi-calculator-results-ideal-weight"
-                  ><!-- add range --></span
-                >.
-              </p>
+              </label>
             </div>
-          </section>
+          </div>
+          <div class="message-container">
+            <section
+              class="hero-bmi-calculator-welcome-message"
+              id="hero-bmi-calculator-welcome-message"
+            >
+              <h3 class="welcome-message-title">Welcome</h3>
+              <p class="welcome-message-description">
+                Enter your height and weight and you’ll see your BMI result here
+              </p>
+            </section>
+
+            <section
+              id="hero-bmi-calculator-results-container"
+              class="hero-bmi-calculator-results-container hidden"
+            >
+              <div>
+                <h3 class="results-title">Your BMI is...</h3>
+
+                <span
+                  class="results-number"
+                  id="hero-bmi-calculator-results-number"
+                >
+                  <!-- add score -->
+                </span>
+              </div>
+              <div class="results-description">
+                <p>
+                  Your BMI suggests you're
+                  <span id="hero-bmi-calculator-results-classification"
+                    ><!-- add classification --></span
+                  >. Your ideal weight is between
+                  <span id="hero-bmi-calculator-results-ideal-weight"
+                    ><!-- add range --></span
+                  >.
+                </p>
+              </div>
+            </section>
+          </div>
         </form>
       </div>
     </section>
@@ -198,7 +216,6 @@
 
       <div class="explanation-description-container">
         <h2 class="explanation-title">What your BMI result means</h2>
-
         <p class="explanation-description">
           A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
           Maintaining a healthy weight may lower your chances of experiencing

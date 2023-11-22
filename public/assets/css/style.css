@@ -151,8 +151,13 @@ input[type='radio']:checked {
 }
 
 .imperial-height-input-wrapper {
+  width: 100%;
+}
+
+.imperial-height-inputs-container {
   display: flex;
-  gap: 1rem;
+  gap: 4%;
+  justify-content: space-between;
 }
 
 .imperial-height-input-wrapper.hidden {
@@ -166,6 +171,11 @@ input[type='radio']:checked {
   font-weight: 400;
   padding: 1rem 0 0.5rem;
   text-align: left;
+}
+
+.label-text {
+  width: 100%;
+  display: block;
 }
 
 .hero-bmi-calculator-input {
@@ -195,7 +205,9 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .bmi-calculator-input-wrapper {
+  display: block;
   position: relative;
+  width: 100%;
 }
 
 .bmi-calculator-input-wrapper:after {
@@ -228,31 +240,35 @@ input[type='number']::-webkit-outer-spin-button {
   content: 'lb';
 }
 
-.hero-bmi-calculator-results-container {
-  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
-  border-radius: 16px;
+.message-container,
+.message-container h3 {
   color: var(--color-pure-white);
-  margin-top: 1.5rem;
-  padding: 2rem;
 }
 
-.hero-bmi-calculator-results-container {
+.message-container {
+  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  padding: 2rem;
   text-align: left;
 }
 
-.hero-bmi-calculator-results-title {
-  color: var(--color-pure-white);
+.welcome-message-title {
+  font-size: 1.5rem;
+}
+
+.results-title {
   font-size: 1rem;
 }
 
-.hero-bmi-calculator-results-number {
+.results-number {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: -0.15rem;
   line-height: 110%;
 }
 
-.hero-bmi-calculator-results-description {
+.results-description {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 150%;
@@ -286,10 +302,14 @@ input[type='number']::-webkit-outer-spin-button {
 
 .tips-section {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .tips-card {
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .tips-card-title {
@@ -359,8 +379,40 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 /*********************************** Tablets */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .hero-bmi-calculator-title {
     text-align: left;
+  }
+
+  #imperial-weight-input-wrapper {
+    width: 100%;
+  }
+
+  .metric-input-wrapper {
+    width: 48%;
+  }
+
+  .calculator-numeric-inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .message-container {
+    border-radius: 0 9999rem 9999rem 0;
+  }
+
+  .hero-bmi-calculator-results-container {
+    display: flex;
+    padding-right: 2rem;
+    align-items: center;
+  }
+
+  .hero-bmi-calculator-results-container > * {
+    flex: 1;
+  }
+
+  .hero-bmi-calculator-results-container.hidden {
+    display: none;
   }
 }
