@@ -165,40 +165,44 @@
               </label>
             </div>
           </div>
-          <section
-            class="hero-bmi-calculator-welcome-message"
-            id="hero-bmi-calculator-welcome-message"
-          >
-            <h3>Welcome</h3>
-            <p>
-              Enter your height and weight and you’ll see your BMI result here
-            </p>
-          </section>
-
-          <section
-            id="hero-bmi-calculator-results-container"
-            class="hero-bmi-calculator-results-container hidden"
-          >
-            <h2 class="hero-bmi-calculator-results-title">Your BMI is...</h2>
-
-            <span
-              class="hero-bmi-calculator-results-number"
-              id="hero-bmi-calculator-results-number"
-              ><!-- add score --></span
+          <div class="message-container">
+            <section
+              class="hero-bmi-calculator-welcome-message"
+              id="hero-bmi-calculator-welcome-message"
             >
-
-            <div class="hero-bmi-calculator-results-description">
-              <p>
-                Your BMI suggests you're
-                <span id="hero-bmi-calculator-results-classification"
-                  ><!-- add classification --></span
-                >. Your ideal weight is between
-                <span id="hero-bmi-calculator-results-ideal-weight"
-                  ><!-- add range --></span
-                >.
+              <h3 class="welcome-message-title">Welcome</h3>
+              <p class="welcome-message-description">
+                Enter your height and weight and you’ll see your BMI result here
               </p>
-            </div>
-          </section>
+            </section>
+
+            <section
+              id="hero-bmi-calculator-results-container"
+              class="hero-bmi-calculator-results-container hidden"
+            >
+              <div>
+                <h3 class="results-title">Your BMI is...</h3>
+
+                <span
+                  class="results-number"
+                  id="hero-bmi-calculator-results-number"
+                >
+                  <!-- add score -->
+                </span>
+              </div>
+              <div class="results-description">
+                <p>
+                  Your BMI suggests you're
+                  <span id="hero-bmi-calculator-results-classification"
+                    ><!-- add classification --></span
+                  >. Your ideal weight is between
+                  <span id="hero-bmi-calculator-results-ideal-weight"
+                    ><!-- add range --></span
+                  >.
+                </p>
+              </div>
+            </section>
+          </div>
         </form>
       </div>
     </section>
