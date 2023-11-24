@@ -280,16 +280,18 @@ input[type='number']::-webkit-outer-spin-button {
 
 /* Explanation Section */
 
+.explanation-image-container {
+  text-align: center;
+}
+
 .explanation-image {
   width: 100%;
+  max-width: 27.2rem;
 }
 
 .explanation-section {
-  background: var(
-    --Gradient-1,
-    linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%)
-  );
   margin-top: 3rem;
+  margin-bottom: 2.48rem;
 }
 
 .explanation-description-container {
@@ -304,18 +306,38 @@ input[type='number']::-webkit-outer-spin-button {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
+  background: var(
+    --Gradient-1,
+    linear-gradient(290deg, #d6e6fe3c 0%, rgba(214, 252, 254, 0) 100%)
+  );
+  padding-top: 3.5rem;
 }
 
 .tips-card {
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+.tips-card-logo {
+  height: 4rem;
+  width: 4rem;
 }
 
 .tips-card-title {
   font-size: var(--heading-md-size);
+  margin: 0;
 }
 
+.tips-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tips-card-description {
+  margin: 0;
+}
 /* Limitations Section */
 
 .limitations-section {
@@ -323,7 +345,7 @@ input[type='number']::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
-  margin: 4.5rem 1.81rem 6rem 1.19rem;
+  padding: 4.5rem 1.81rem 6rem 1.19rem;
 }
 
 .limitations-title-card {
@@ -380,8 +402,29 @@ input[type='number']::-webkit-outer-spin-button {
 
 /*********************************** Tablets */
 @media screen and (min-width: 640px) {
+  /* Hero Description */
+  .hero-title {
+    margin-top: 2.5rem;
+  }
+  .hero-intro-section {
+    padding-left: 2.875rem;
+    padding-right: 2.875rem;
+  }
+
+  .hero-description {
+    padding: 0;
+  }
+
+  /* Calculator */
+
+  .hero-bmi-calculator-section {
+    margin-left: 2.875rem;
+    margin-right: 2.875rem;
+  }
+
   .hero-bmi-calculator-title {
     text-align: left;
+    margin: 1.5rem auto;
   }
 
   #imperial-weight-input-wrapper {
@@ -398,6 +441,8 @@ input[type='number']::-webkit-outer-spin-button {
     flex-wrap: wrap;
   }
 
+  /* Results Container */
+
   .message-container {
     border-radius: 0 9999rem 9999rem 0;
   }
@@ -406,6 +451,7 @@ input[type='number']::-webkit-outer-spin-button {
     display: flex;
     padding-right: 2rem;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .hero-bmi-calculator-results-container > * {
@@ -414,5 +460,67 @@ input[type='number']::-webkit-outer-spin-button {
 
   .hero-bmi-calculator-results-container.hidden {
     display: none;
+  }
+
+  /* Explanation Section */
+
+  .explanation-section {
+    display: flex;
+    padding: 2.875rem;
+    gap: 4.875rem;
+    align-items: center;
+  }
+
+  .explanation-section > div {
+    flex: 1;
+  }
+
+  .explanation-description-container {
+    padding: 0;
+  }
+
+  .explanation-image-container {
+    position: relative;
+    min-height: 25.6875rem;
+  }
+
+  .explanation-image {
+    max-width: unset;
+    width: auto;
+    height: 25.6875rem;
+    position: absolute;
+    right: 0;
+    top: -0.25rem;
+  }
+
+  /* Tips Section */
+
+  .tips-section {
+    padding: 3.75rem 2.875rem;
+  }
+
+  .tips-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Limitations Section */
+
+  .limitations-section {
+    padding: 6rem 2.875rem;
+  }
+
+  .limitations-cards-division {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+  }
+
+  .limitations-card {
+    flex: 1;
+    min-width: 16rem;
+    max-width: 22.8rem;
   }
 }
