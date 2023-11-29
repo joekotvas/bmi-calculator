@@ -524,3 +524,46 @@ input[type='number']::-webkit-outer-spin-button {
     max-width: 22.8rem;
   }
 }
+
+/*********************************** Desktop */
+@media screen and (min-width: 1280px) {
+  body {
+    background: lightcoral;
+  }
+  .main-section {
+    max-width: 87rem;
+    margin: auto;
+    padding: 0 7.25rem;
+    background-color: white;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .logo-wrapper {
+    text-align: left;
+    width: 100%;
+  }
+  .hero-section > * {
+    flex: 1;
+  }
+  .hero-intro-section {
+    height: 46rem;
+  }
+  .hero-description,
+  .hero-title {
+    max-width: 30rem;
+    text-align: left;
+  }
+  .hero-title {
+    margin-left: 0;
+    margin-top: 8rem;
+  }
+  .hero-bmi-calculator-section {
+    margin: 0;
+    margin-left: -25%;
+    max-width: 48.6%;
+  }
+}
