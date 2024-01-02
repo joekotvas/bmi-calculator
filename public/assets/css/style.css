@@ -255,6 +255,12 @@ input[type='number']::-webkit-outer-spin-button {
 
 .welcome-message-title {
   font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.welcome-message-description {
+  font-size: 0.875rem;
+  margin-bottom: 0;
 }
 
 .results-title {
@@ -302,7 +308,7 @@ input[type='number']::-webkit-outer-spin-button {
   letter-spacing: -0.1rem;
 }
 
-.tips-section {
+.tips-wrapper {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -427,6 +433,9 @@ input[type='number']::-webkit-outer-spin-button {
     margin: 1.5rem auto;
   }
 
+  .hero-bmi-calculator-units-radio-container {
+    padding-bottom: 2rem;
+  }
   #imperial-weight-input-wrapper {
     width: 100%;
   }
@@ -496,7 +505,11 @@ input[type='number']::-webkit-outer-spin-button {
   /* Tips Section */
 
   .tips-section {
-    padding: 3.75rem 2.875rem;
+    padding: 3.75rem;
+  }
+
+  .tips-wrapper {
+    padding: 2.44rem 2.44rem 2.875rem;
   }
 
   .tips-card {
@@ -527,17 +540,25 @@ input[type='number']::-webkit-outer-spin-button {
 
 /*********************************** Desktop */
 @media screen and (min-width: 1280px) {
-  body {
-    background: lightcoral;
+
+  h2 {
+    font-size: 3rem;
   }
+
   .main-section {
     max-width: 87rem;
     margin: auto;
-    padding: 0 7.25rem;
+    padding: 0 7.25rem 0 7.25rem;
     background-color: white;
   }
+
+  .logo {
+    width: 4rem;
+  }
+  
   .hero-section {
     display: flex;
+    padding: 0 8.25rem 0 1.5rem;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -566,4 +587,98 @@ input[type='number']::-webkit-outer-spin-button {
     margin-left: -25%;
     max-width: 48.6%;
   }
+
+  .results-number {
+    font-size: 4rem;
+  }
+
+  .explanation-section {
+    position: relative;
+    padding-top: 4.25rem;
+    padding-bottom: 4.25rem;
+    height: auto;
+  }
+  
+  .explanation-section:before {
+    content: '';
+    position: absolute;
+    background: url('../images/pattern-curved-line-left.svg') top left;
+    right: 10.44rem;
+    top: 0.7475rem;
+    width: 5.3125rem;
+    height: 12.5rem;
+    z-index: 9999;
+  }
+
+  .explanation-image {
+    position: static;
+    height: 33.3rem;
+  }
+
+  .explanation-title {
+    margin-top: 9rem;
+    font-size: 3rem;
+  }
+
+  .tips-container {
+    padding: 0 1.5rem;
+  }
+  
+  .tips-wrapper {
+    flex-direction: row;
+    padding: 4.5rem 6rem 4.5rem;
+    border-radius: 2.25rem;
+  }
+
+  .tips-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.875rem;
+  }
+
+  .limitations-cards-division {
+    gap: 2rem;
+  }
+
+  .limitations-section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    position: relative;
+  }
+  .limitations-title-card {
+    max-width: 35.25rem;
+    position: relative;
+  }
+
+  .limitations-title {
+    text-align: left;
+    font-size: 3rem;
+  }
+
+  .limitations-description {
+    text-align: left;
+  }
+
+  .limitations-title-card:after {
+    content: '';
+    position: absolute;
+    background: url('../images/pattern-curved-line-right.svg') bottom right;
+    left: 10.31rem;
+    top:  15.6925rem;
+    width: 5.875rem;
+    height: 7.625rem;
+    z-index: 9999;
+  }
+  
+  .limitations-cards-division {
+    margin-top: -14.5025rem;
+  }
+  #gender-card {
+    margin-left: 45.5rem;
+  }
+
+  #age-card {
+    margin-left: 24.87rem;
+  }
+  
 }
